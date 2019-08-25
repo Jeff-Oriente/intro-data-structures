@@ -1,0 +1,89 @@
+1. A line of people at an amusement park ride.
+
+The line is composed of members, represented as strings.
+There is a front to the line, as well as a back.
+When someone enters the line, place them at the end.
+People may leave the line whenever they see fit, and those behind them take their place.
+Given the above real-world information, use an array data structure to code the following solution.
+
+a) Use an array input: ["Vivian", "Ava", "Josh", "Patrick", "Mike"]
+
+Answer: let amusementParkRideMembers = ["Vivian", "Ava", "Josh", "Patrick", "Mike"];
+
+b) Insert a new person, "Mary" at the end of the line. In other words, you should insert Mary after Mike.
+
+Answer: amusementParkRideMembers.push("Mary");
+
+c) Find a person in line named "Josh." This function should return the position of 2 in the array, (recall that arrays are 0-based).
+
+Answer: function findJosh(name){
+  return amusementParkRideMembers.indexOf(name);
+}
+
+console.log(findJosh("Josh"));    //2
+
+d) Find a person in line named "Emily." What should your function return if it does not find the item in the array?
+
+Answer: function findEmily(name) {
+  let indexOfPerson = amusementParkRideMembers.indexOf(name);
+  if(indexOfPerson === -1) {
+    return "Person does not exist";
+  } else { return indexOfPerson
+      return
+  }
+}
+
+console.log(findEmily("Emily")); // "Person does not exist"
+
+e) What if Ava wants to allow a friend, "Melissa", to cut in line in front of her? How would you code this so Melissa appears before Ava?
+
+Answer: function lineCut(primaryPerson, friendCutter) {
+  let indexOfPerson = amusementParkRideMembers.indexOf(primaryPerson);
+  amusementParkRideMembers.splice(indexOfPerson, 0, friendCutter);
+  return amusementParkRideMembers;
+}
+
+console.log(lineCut("Ava", "Melissa"));  // [ 'Vivian', 'Melissa', 'Ava', 'Josh', 'Patrick', 'Mike', 'Mary' ]
+
+f) If Patrick wants to leave the line, how would you delete him from the array?
+
+Answer: function removePatrick(name) {
+  let indexOfPerson = amusementParkRideMembers.indexOf(name);
+    if(index > -1) {
+      amusementParkRideMembers.splice(indexOfPerson, 1);
+      return amusementParkRideMembers;
+    }
+}
+
+console.log(function(removePatrick('Patrick'))); // [ 'Vivian', 'Melissa', 'Ava', 'Josh', 'Mike', 'Mary' ]
+
+////////////////////////////////////////////////////////////////////////////////////////////
+
+2.  Provide another real-world example that you can model using a data structure.
+
+Answer:
+
+let hardwareItems = [
+  {
+  item: 'Hammer',
+  cost: 24.99,
+  inStock: true
+  }
+  {
+  item: 'Screwdriver',
+  cost: 15.88,
+  inStock: true
+  }
+  {
+  item: 'Turnbuckles',
+  cost: 12.99,
+  inStock: false
+  }
+]
+
+////////////////////////////////////////////////////////////////////////////////////////////
+
+3. How would your data structure allow developers to access and manipulate the data?
+
+Answer: My data structure would allow developers to access and manipulate the data through using various array methods
+such as map, indexOf, pop, push, unshift, shift, splice, and more.
